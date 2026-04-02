@@ -5,7 +5,7 @@ const steps = [
   {
     number: "01",
     title: "Projeto Sob Medida",
-    desc: "Preencha o formulário e nossa equipe desenha um modelo exclusivo para a sua empresa a custo zero."
+    desc: <>Preencha o formulário e nossa equipe desenha um modelo exclusivo para a sua empresa a <strong>custo zero</strong>.</>
   },
   {
     number: "02",
