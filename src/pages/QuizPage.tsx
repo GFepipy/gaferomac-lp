@@ -89,7 +89,7 @@ export const QuizPage = () => {
         >
           <span className="text-[var(--color-background)]/80 font-semibold tracking-widest uppercase text-xs mb-4 block">Análise de Potencial</span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-[var(--color-background)] mb-6 text-balance tracking-tighter font-display leading-[1.05]">
-            Configure seu perfil de venda corporativa.
+            Descubra o lucro oculto no seu pátio de máquinas.
           </h1>
           <p className="text-white/60 text-lg mb-8 max-w-[35ch] leading-relaxed">
             Mapeamos o volume do seu estoque e perfil de repasse para calcular o quanto a automação pode devolver em margem líquida.
