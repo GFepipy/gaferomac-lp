@@ -3,7 +3,6 @@ import { Section } from '../components/ui/Section';
 import { Button } from '../components/ui/Button';
 import { useNavigate } from 'react-router-dom';
 import tractorImg from '../assets/tractor_hero.png';
-import crmImg from '../assets/crm_mockup.png';
 
 export const Hero = () => {
   const navigate = useNavigate();
@@ -65,15 +64,6 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-[var(--color-foreground)]/20 z-10" />
             <img src={tractorImg} alt="Máquina Agrícola Moderna" className="w-full h-full object-cover object-center" />
           </div>
-          
-          {/* Floating Dashboard Overlay */}
-          <motion.div 
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="relative z-20 bg-[var(--color-foreground)] rounded-none w-[90%] md:w-[85%] aspect-[16/9] border border-[var(--color-background)] overflow-hidden mt-32 lg:mt-48 lg:-ml-16"
-          >
-            <img src={crmImg} alt="CRM Dashboard Interface" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
-          </motion.div>
           
           {/* Floating Metric Card */}
           <motion.div 
