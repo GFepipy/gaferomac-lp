@@ -69,7 +69,7 @@ export const SocialProof = () => {
                 <p className="text-white/80 text-[15px] leading-relaxed mb-8 font-medium">
                   "{test.content}"
                 </p>
-                <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between gap-4">
+                <div className="mt-auto pt-6 border-t border-white/10 flex flex-col items-start gap-4">
                   <div className="flex items-center gap-3">
                     <img src={test.image} alt={test.name} className="w-10 h-10 rounded-full object-cover border border-white/20" />
                     <div>
