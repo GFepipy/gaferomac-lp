@@ -41,6 +41,9 @@ export const QuizPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
+  const [formData, setFormData] = useState({ empresa: '', email: '', phone: '' });
+  const [formStep, setFormStep] = useState(0);
+
   const handleAnswer = (questionId: string, value: string) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }));
     setTimeout(() => {
@@ -48,13 +51,17 @@ export const QuizPage = () => {
     }, 400);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+    if (formStep < 2) {
+      setFormStep(s => s + 1);
+    } else {
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+      }, 1500);
+    }
   };
 
   return (
@@ -175,7 +182,7 @@ export const QuizPage = () => {
                   </motion.div>
                 ) : (
                   <motion.div
-                    key="form"
+                    key={`form-${formStep}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
@@ -189,18 +196,24 @@ export const QuizPage = () => {
                         Seus dados confirmam que a GaferoMac pode aumentar significativamente suas margens de venda.
                       </p>
                     </div>
-                    <form className="space-y-4" onSubmit={handleSubmit}>
-                      <div>
-                        <input required type="text" placeholder="Nome da sua empresa (Ex: AgroMaq Ltda)" className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-3 sm:py-4 focus:outline-none focus:border-[var(--color-background)] focus:bg-white/10 transition-all font-medium text-[var(--color-background)] placeholder-white/40 text-sm" />
-                      </div>
-                      <div>
-                        <input required type="email" placeholder="Seu E-mail Corporativo" className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-3 sm:py-4 focus:outline-none focus:border-[var(--color-background)] focus:bg-white/10 transition-all font-medium text-[var(--color-background)] placeholder-white/40 text-sm" />
-                      </div>
-                      <div>
-                        <input required type="tel" placeholder="WhatsApp / Telefone para contato" className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-3 sm:py-4 focus:outline-none focus:border-[var(--color-background)] focus:bg-white/10 transition-all font-medium text-[var(--color-background)] placeholder-white/40 text-sm" />
-                      </div>
-                      <Button disabled={isSubmitting} type="submit" variant="glass" magnetic={false} className="w-full py-4 text-xs font-bold uppercase tracking-widest mt-2 group flex justify-center gap-2 relative overflow-hidden border-none text-[var(--color-background)] bg-white/10 hover:bg-white/20 rounded-full">
-                        {isSubmitting ? 'Gerando plano...' : 'Receber Análise Gratuita'} 
+                    <form className="space-y-4" onSubmit={handleFormSubmit}>
+                      {formStep === 0 && (
+                        <div>
+                          <input autoFocus required type="text" value={formData.empresa} onChange={(e) => setFormData({...formData, empresa: e.target.value})} placeholder="Nome da sua empresa (Ex: AgroMaq Ltda)" className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-3 sm:py-4 focus:outline-none focus:border-[var(--color-background)] focus:bg-white/10 transition-all font-medium text-[var(--color-background)] placeholder-white/40 text-sm" />
+                        </div>
+                      )}
+                      {formStep === 1 && (
+                        <div>
+                          <input autoFocus required type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} placeholder="Seu E-mail Corporativo" className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-3 sm:py-4 focus:outline-none focus:border-[var(--color-background)] focus:bg-white/10 transition-all font-medium text-[var(--color-background)] placeholder-white/40 text-sm" />
+                        </div>
+                      )}
+                      {formStep === 2 && (
+                        <div>
+                          <input autoFocus required type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} placeholder="WhatsApp / Telefone para contato" className="w-full bg-white/5 border border-white/10 rounded-full px-8 py-3 sm:py-4 focus:outline-none focus:border-[var(--color-background)] focus:bg-white/10 transition-all font-medium text-[var(--color-background)] placeholder-white/40 text-sm" />
+                        </div>
+                      )}
+                      <Button disabled={isSubmitting} type="submit" variant="glass" magnetic={false} className="w-full py-4 text-xs font-bold uppercase tracking-widest mt-2 group flex justify-center gap-2 relative overflow-hidden border-none text-[var(--color-background)] bg-white/10 hover:bg-white/20 rounded-full cursor-pointer">
+                        {formStep < 2 ? 'Continuar' : (isSubmitting ? 'Gerando plano...' : 'Receber Análise Gratuita')} 
                         {!isSubmitting && <ArrowRight weight="bold" size={16} className="group-hover:translate-x-1 transition-transform" />}
                       </Button>
                     </form>
