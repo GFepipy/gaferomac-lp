@@ -3,27 +3,31 @@ import { Section } from '../components/ui/Section';
 import { Card } from '../components/ui/Card';
 import { Star } from '@phosphor-icons/react';
 
+import carlosImg from '../assets/carlos.png';
+import julianaImg from '../assets/juliana.png';
+import robertoImg from '../assets/roberto.png';
+
 const testimonials = [
   {
     name: "Carlos Eduardo Arantes",
     role: "Diretor Comercial - AgroMáquinas",
     content: "Antes da GaferoMac, perdíamos em média 35% do valor real dos tratores usados em leilões. Com o site próprio e a IA qualificando os leads, nossa margem subiu absurdamente no primeiro trimestre.",
     result: "+35% Recuperação",
-    image: "/carlos.png"
+    image: carlosImg
   },
   {
     name: "Juliana Mendes",
     role: "Gerente de Frota - Usina Alvorada",
     content: "Eu não tinha tempo de atender todo mundo que queria comprar nosso maquinário descontinuado. O agente virtual faz o processo inteiro: tira as dúvidas técnicas das colheitadeiras e me passa o WhatsApp só de quem vai comprar.",
     result: "120h economizadas/mês",
-    image: "/juliana.png"
+    image: julianaImg
   },
   {
     name: "Roberto Campos",
     role: "Proprietário - SC Tratores",
     content: "Achei que ter um site ia me dar dor de cabeça com TI. O modelo 'feito para você' cumpriu a promessa integralmente. Em semanas, tínhamos a vitrine no ar vendendo equipamentos com 40% a mais do que o sucateiro oferecia.",
     result: "+42% de Margem",
-    image: "/roberto.png"
+    image: robertoImg
   }
 ];
 
