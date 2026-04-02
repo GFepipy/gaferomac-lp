@@ -61,7 +61,7 @@ export const Hero = () => {
           {/* Main Machinery Image */}
           <div className="absolute inset-x-0 inset-y-8 lg:inset-0 rounded-none overflow-hidden border border-[var(--color-foreground)] shadow-none">
             <div className="absolute inset-0 bg-[var(--color-foreground)]/20 z-10" />
-            <img src="/hero_image.png" alt="Máquina Agrícola Moderna" className="w-full h-full object-cover object-center" />
+            <img src="hero_image.png" alt="Máquina Agrícola Moderna" className="w-full h-full object-cover object-center" />
           </div>
           
           {/* Floating Dashboard Overlay */}
@@ -70,7 +70,7 @@ export const Hero = () => {
             transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             className="relative z-20 bg-[var(--color-foreground)] rounded-none w-[90%] md:w-[85%] aspect-[16/9] border border-[var(--color-background)] overflow-hidden mt-32 lg:mt-48 lg:-ml-16"
           >
-            <img src="/dashboard_mockup.png" alt="CRM Dashboard Interface" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
+            <img src="dashboard_mockup.png" alt="CRM Dashboard Interface" className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
           </motion.div>
           
           {/* Floating Metric Card */}

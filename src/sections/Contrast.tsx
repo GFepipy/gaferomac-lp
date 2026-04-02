@@ -30,7 +30,7 @@ export const Contrast = () => {
         className="text-center mb-16"
       >
         <h2 className="text-3xl md:text-5xl max-w-3xl mx-auto mb-6 text-[var(--color-background)]">
-          Mude a história dos seus equipamentos. Você vai querer sair na frente ou continuar no passado?
+          Mude a história dos seus equipamentos. Pare de perder dinheiro.
         </h2>
       </motion.div>
 

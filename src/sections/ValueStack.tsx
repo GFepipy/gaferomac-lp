@@ -43,7 +43,7 @@ export const ValueStack = () => {
             
             <div className="hidden md:block absolute right-0 bottom-0 top-0 w-1/2 transition-transform group-hover:scale-[1.03] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden scale-100">
               <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-background)] via-[var(--color-background)]/90 to-transparent z-10" />
-              <img src="/network.png" alt="Motor e Máquina Conectados" className="w-full h-full object-cover object-left" />
+              <img src="network.png" alt="Motor e Máquina Conectados" className="w-full h-full object-cover object-left" />
             </div>
           </Card>
         </motion.div>
