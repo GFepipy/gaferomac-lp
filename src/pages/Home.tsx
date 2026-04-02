@@ -6,6 +6,7 @@ import { SocialProof } from '../sections/SocialProof';
 import { Guarantee } from '../sections/Guarantee';
 import { FAQ } from '../sections/FAQ';
 import { FinalCTA } from '../sections/FinalCTA';
+import { Footer } from '../sections/Footer';
 
 export const Home = () => {
   return (
@@ -18,6 +19,7 @@ export const Home = () => {
       <Guarantee />
       <FAQ />
       <FinalCTA />
+      <Footer />
     </>
   );
 };
