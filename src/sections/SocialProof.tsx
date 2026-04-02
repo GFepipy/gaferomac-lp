@@ -9,18 +9,21 @@ const testimonials = [
     role: "Diretor Comercial - AgroMáquinas",
     content: "Antes da GaferoMac, perdíamos em média 35% do valor real dos tratores usados em leilões. Com o site próprio e a IA qualificando os leads, nossa margem subiu absurdamente no primeiro trimestre.",
     result: "+35% Recuperação",
+    image: "/carlos.png"
   },
   {
     name: "Juliana Mendes",
     role: "Gerente de Frota - Usina Alvorada",
     content: "Eu não tinha tempo de atender todo mundo que queria comprar nosso maquinário descontinuado. O agente virtual faz o processo inteiro: tira as dúvidas técnicas das colheitadeiras e me passa o WhatsApp só de quem vai comprar.",
     result: "120h economizadas/mês",
+    image: "/juliana.png"
   },
   {
     name: "Roberto Campos",
     role: "Proprietário - SC Tratores",
     content: "Achei que ter um site ia me dar dor de cabeça com TI. O modelo 'feito para você' cumpriu a promessa integralmente. Em semanas, tínhamos a vitrine no ar vendendo equipamentos com 40% a mais do que o sucateiro oferecia.",
     result: "+42% de Margem",
+    image: "/roberto.png"
   }
 ];
 
@@ -62,10 +65,13 @@ export const SocialProof = () => {
                 <p className="text-white/80 text-[15px] leading-relaxed mb-8 font-medium">
                   "{test.content}"
                 </p>
-                <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
-                  <div>
-                    <div className="font-semibold text-sm text-white font-display tracking-wide">{test.name}</div>
-                    <div className="text-xs text-white/50">{test.role}</div>
+                <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <img src={test.image} alt={test.name} className="w-10 h-10 rounded-full object-cover border border-white/20" />
+                    <div>
+                      <div className="font-semibold text-sm text-white font-display tracking-wide">{test.name}</div>
+                      <div className="text-xs text-white/50">{test.role}</div>
+                    </div>
                   </div>
                   <div className="bg-transparent text-emerald-400 text-[11px] uppercase tracking-wider font-bold px-3 py-1.5 rounded-none border border-emerald-400/50">
                     {test.result}
