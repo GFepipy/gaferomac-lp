@@ -57,10 +57,10 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.95, x: 20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.46, 0.03, 0.52, 0.96] }}
-          className="relative lg:h-[600px] w-full flex items-center justify-center mt-12 lg:mt-0"
+          className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full flex items-center justify-center mt-8 mb-12 lg:mt-0 lg:mb-0"
         >
           {/* Main Machinery Image */}
-          <div className="absolute inset-x-0 inset-y-8 lg:inset-0 rounded-none overflow-hidden border border-[var(--color-foreground)] shadow-none">
+          <div className="absolute inset-x-0 inset-y-0 rounded-none overflow-hidden border border-[var(--color-foreground)] shadow-none">
             <div className="absolute inset-0 bg-[var(--color-foreground)]/20 z-10" />
             <img src={tractorImg} alt="Máquina Agrícola Moderna" className="w-full h-full object-cover object-center" />
           </div>
